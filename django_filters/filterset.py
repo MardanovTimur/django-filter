@@ -327,7 +327,8 @@ class BaseFilterSet(object):
         undefined = []
 
         for field_name, lookups in fields.items():
-            field = get_model_field(cls._meta.model, field_name)
+            print('django_filters ', cls)
+            field = get_model_field(cls, field_name)
 
             # warn if the field doesn't exist.
             if field is None:
